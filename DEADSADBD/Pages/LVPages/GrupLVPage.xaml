@@ -1,0 +1,61 @@
+﻿<Page x:Class="DEADSADBD.Pages.LVPages.GrupLVPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DEADSADBD.Pages.LVPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GrupLVPage" Background="#20ffffff">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Группы" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+        <ListView Name="LvDeti" Grid.Row="1" Background="#20ffffff" MouseDoubleClick="BtDetiClick">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    
+                        <Button x:Name="BtAdd" Content="Добавить" Click="BtAddClick"/>
+                    
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left" Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" >
+                            <Grid Background="#50ffffff" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="250">
+                                <Grid.ContextMenu>
+                                    <ContextMenu>
+                                        
+                                            <Button x:Name="BtDel" Content="Удалить" Click="BtDelClick"/>
+                                        
+                                    </ContextMenu>
+                                </Grid.ContextMenu>
+                                <StackPanel>
+                                    <TextBlock>
+                                    <Run Text="Номер: "/>
+                                    <Run Text="{Binding Nomer}"/>
+                                    </TextBlock>
+                                    
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

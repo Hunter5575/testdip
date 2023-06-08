@@ -1,0 +1,58 @@
+﻿<Window x:Class="DEADSADBD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DEADSADBD" xmlns:local1="clr-namespace:DEADSADBD.Pages"
+        mc:Ignorable="d"
+        Title="Главное меню" MinHeight="720" MinWidth="1024" >
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.0,1" EndPoint="0.0,0">
+            <GradientStop Color="#900020" Offset="0.9"/>
+            <GradientStop Color="#ff4500"/>
+            <GradientStop Color="#ff8c00" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Детский сад №5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                
+                <Button Content="Посещаемость" Margin="5" Name="BtPosesh" Click="BtPosechClick"/>
+                <Button Content="Отчёт" Margin="5" Name="BtOtchet" Click="BtOtchetClick"/>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.RowSpan="2" Grid.Row="1">
+                <Label Content="Дополнительно:" FontSize="15"/>
+                <TreeView Background="#25ffffff" >
+                    <TreeViewItem>
+                        <Button Content="Дети" Click="BtDetiClick" Name="BtDeti" Width="150"/>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <Button Content="Группа" Click="BtGroupClick" Name="BtGroup" Width="150"/>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <Button Content="Воспитатели" Click="BtVospitClick" Name="BtVospit" Width="150"/>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <Button Content="Пользователи" Click="BtPolzovatClick" Name="BtPolzovat" Width="150"/>
+                    </TreeViewItem>
+                </TreeView>
+            </StackPanel>
+            <Frame Grid.Column="1" NavigationUIVisibility="Hidden" Name="FrNav" Grid.RowSpan="3"/>
+        </Grid>
+    </Grid>
+</Window>
